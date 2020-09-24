@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://PlaceButton.gd" type="Script" id=1]
+
+[node name="Place" type="Button"]
+margin_left = 259.792
+margin_top = 251.494
+margin_right = 366.792
+margin_bottom = 333.494
+text = "Place 1"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

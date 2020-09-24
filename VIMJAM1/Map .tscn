@@ -1,0 +1,43 @@
+[gd_scene format=2]
+
+[node name="Map " type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.212402
+margin_right = 0.212402
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.479
+anchor_right = 0.5
+anchor_bottom = 0.479
+margin_left = -20.0
+margin_top = -7.3898
+margin_right = 20.0
+margin_bottom = 7.6102
+text = "TEXT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="ColorRect"]
+anchor_left = 0.497
+anchor_top = 0.501
+anchor_right = 0.497
+anchor_bottom = 0.501
+margin_left = -32.4852
+margin_top = -12.4362
+margin_right = 33.5148
+margin_bottom = 11.5638
+text = "BUTTON"

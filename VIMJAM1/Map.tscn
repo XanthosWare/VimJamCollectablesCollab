@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Place2Button.gd" type="Script" id=1]
+[ext_resource path="res://Beggining.gd" type="Script" id=2]
+[ext_resource path="res://Label.gd" type="Script" id=3]
+[ext_resource path="res://PlaceButton.tscn" type="PackedScene" id=4]
+
+[node name="Map" type="Control"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1498.0
+margin_bottom = 938.0
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Place 1" parent="ColorRect" instance=ExtResource( 4 )]
+margin_left = 552.204
+margin_top = 295.991
+margin_right = 659.204
+margin_bottom = 377.991
+
+[node name="Place 2" type="Button" parent="ColorRect"]
+margin_left = 892.152
+margin_top = 298.871
+margin_right = 999.152
+margin_bottom = 380.871
+text = "Place 2"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect"]
+margin_left = 667.877
+margin_top = 205.026
+margin_right = 868.877
+margin_bottom = 285.026
+text = "Fuel:
+
+"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Place" parent="ColorRect" instance=ExtResource( 4 )]
+margin_left = 729.769
+margin_top = 424.869
+margin_right = 836.769
+margin_bottom = 506.869
+[connection signal="pressed" from="ColorRect/Place 1" to="ColorRect/Label" method="_on_Place_1_pressed"]
+[connection signal="pressed" from="ColorRect/Place 1" to="." method="_on_Place_1_pressed"]
+[connection signal="pressed" from="ColorRect/Place 2" to="ColorRect/Label" method="_on_Place_2_pressed"]
+[connection signal="pressed" from="ColorRect/Place 2" to="." method="_on_Place_2_pressed"]
+[connection signal="pressed" from="ColorRect/Place" to="." method="_on_Place_pressed"]
