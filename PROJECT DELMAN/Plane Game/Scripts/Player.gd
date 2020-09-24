@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
 # Player movement speed
-export var speed = 75
+export var speed = 500
+var score = 0
 
 func _physics_process(delta):
 	# Get player input
@@ -16,4 +17,12 @@ func _physics_process(delta):
 	# Apply movement
 	var movement = speed * direction * delta
 	move_and_collide(movement)
+	
+
+func getScore():
+	return score
+
+func _on_Area2D_area_entered(area):
+	print("kek")
+	
 	

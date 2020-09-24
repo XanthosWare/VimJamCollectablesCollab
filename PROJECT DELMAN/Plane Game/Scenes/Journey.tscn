@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Plane Game/Scenes/Journey.gd" type="Script" id=1]
+[ext_resource path="res://TypewriteFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Plane Game/Art/Background Sky/sky1.png" type="Texture" id=3]
+[ext_resource path="res://Plane Game/Scenes/Scoreboard.gd" type="Script" id=4]
+[ext_resource path="res://Plane Game/Art/Collectable Stamps/STAMP_WA_PURPLE.png" type="Texture" id=5]
+[ext_resource path="res://Plane Game/Scenes/Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Plane Game/Collectables/Stamp.tscn" type="PackedScene" id=9]
+
+[node name="World" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" parent="." instance=ExtResource( 8 )]
+position = Vector2( 217.635, 506.328 )
+scale = Vector2( 4, 4 )
+
+[node name="Stamp" parent="." instance=ExtResource( 9 )]
+position = Vector2( 675.459, 514.362 )
+
+[node name="Sprite" parent="Stamp" index="1"]
+texture = ExtResource( 5 )
+
+[node name="Scoreboard" type="Label" parent="."]
+margin_right = 424.0
+margin_bottom = 199.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Stamps : 0"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 3.45221
+margin_top = 107.706
+margin_right = 97.4522
+margin_bottom = 174.706
+text = "Go back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+
+[editable path="Player"]
+
+[editable path="Stamp"]

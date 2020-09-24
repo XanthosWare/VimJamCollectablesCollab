@@ -9,11 +9,8 @@
 [ext_resource path="res://Map/Art/CHI.png" type="Texture" id=7]
 [ext_resource path="res://Map/Art/Phila.png" type="Texture" id=8]
 [ext_resource path="res://Map/Art/DC.png" type="Texture" id=9]
-[ext_resource path="res://TravelingTypewriter.ttf" type="DynamicFontData" id=10]
-
-[sub_resource type="DynamicFont" id=1]
-size = 64
-font_data = ExtResource( 10 )
+[ext_resource path="res://TypewriteFont.tres" type="DynamicFont" id=10]
+[ext_resource path="res://Menu/Scenes/MenuButton.tscn" type="PackedScene" id=11]
 
 [node name="Map" type="Control"]
 script = ExtResource( 4 )
@@ -104,7 +101,7 @@ margin_left = 106.76
 margin_top = 891.176
 margin_right = 363.76
 margin_bottom = 973.176
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0.0627451, 0.0117647, 0, 1 )
 text = "NYC"
 valign = 1
@@ -112,15 +109,29 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="TextureRect/NYC/Waypoint" to="." method="_on_Waypoint_pressed"]
+
+[node name="BackToMenu" parent="." instance=ExtResource( 11 )]
+margin_left = 85.0
+margin_top = 17.0
+margin_right = 305.0
+margin_bottom = 76.0
+
+[node name="Button Name" parent="BackToMenu" index="0"]
+margin_right = 217.0
+margin_bottom = 52.0
+custom_colors/font_color = Color( 0.0627451, 0.0117647, 0, 1 )
+text = "Back to Menu"
 [connection signal="pressed" from="TextureRect/NYC/Waypoint" to="TextureRect/Map Controller" method="_on_Waypoint_NYC_pressed"]
+[connection signal="pressed" from="TextureRect/NYC/Waypoint" to="." method="_on_Waypoint_pressed"]
 [connection signal="pressed" from="TextureRect/CHI/Waypoint" to="TextureRect/Map Controller" method="_on_Waypoint_CHI_pressed"]
-[connection signal="pressed" from="TextureRect/SF/Waypoint" to="." method="_on_Waypoint_pressed"]
+[connection signal="pressed" from="TextureRect/CHI/Waypoint" to="." method="_on_Waypoint_pressed"]
 [connection signal="pressed" from="TextureRect/SF/Waypoint" to="TextureRect/Map Controller" method="_on_Waypoint_SF_pressed"]
-[connection signal="pressed" from="TextureRect/Phila/Waypoint" to="." method="_on_Waypoint_pressed"]
+[connection signal="pressed" from="TextureRect/SF/Waypoint" to="." method="_on_Waypoint_pressed"]
 [connection signal="pressed" from="TextureRect/Phila/Waypoint" to="TextureRect/Map Controller" method="_on_Waypoint_Phila_pressed"]
-[connection signal="pressed" from="TextureRect/DC/Waypoint" to="." method="_on_Waypoint_pressed"]
+[connection signal="pressed" from="TextureRect/Phila/Waypoint" to="." method="_on_Waypoint_pressed"]
 [connection signal="pressed" from="TextureRect/DC/Waypoint" to="TextureRect/Map Controller" method="_on_Waypoint_DC_pressed"]
+[connection signal="pressed" from="TextureRect/DC/Waypoint" to="." method="_on_Waypoint_pressed"]
+[connection signal="pressed" from="BackToMenu" to="." method="_on_BackToMenu_pressed"]
 
 [editable path="TextureRect/NYC"]
 
@@ -131,3 +142,5 @@ __meta__ = {
 [editable path="TextureRect/Phila"]
 
 [editable path="TextureRect/DC"]
+
+[editable path="BackToMenu"]

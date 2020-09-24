@@ -19,6 +19,11 @@ config/name="VIMJAM1"
 run/main_scene="res://Map/Scenes/Map.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://global.gd"
+Waypoint="res://Map/Scenes/Waypoint.tscn"
+
 [display]
 
 window/size/width=1920
@@ -48,6 +53,11 @@ texture={
 "stream": false,
 "svg/scale": 1.0
 }
+
+[layer_names]
+
+2d_physics/layer_1="Plane"
+2d_physics/layer_2="Stamps"
 
 [rendering]
 
