@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/plane_hit.ogg-0b30c810b128f95cefcf886c8a485fea.oggstr"
+
+[deps]
+
+source_file="res://Music/plane_hit.ogg"
+dest_files=[ "res://.import/plane_hit.ogg-0b30c810b128f95cefcf886c8a485fea.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

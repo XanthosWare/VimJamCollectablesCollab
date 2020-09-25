@@ -1,0 +1,254 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Plane Game/Scenes/Journey.gd" type="Script" id=1]
+[ext_resource path="res://TypewriteFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Plane Game/Art/Background Sky/sky1.png" type="Texture" id=3]
+[ext_resource path="res://Plane Game/Scenes/Scoreboard.gd" type="Script" id=4]
+[ext_resource path="res://Music/click_positive.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Music/track_2.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Music/propeller.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Plane Game/Scenes/Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Plane Game/Collectables/Stamp.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Music/engine_bang.ogg" type="AudioStream" id=10]
+
+[sub_resource type="Animation" id=1]
+resource_name = "stampEffect"
+length = 0.6
+tracks/0/type = "audio"
+tracks/0/path = NodePath("AudioStreamPlayer2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 5 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 9 ), Vector2( 0, -60 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "stampEffect"
+length = 0.6
+tracks/0/type = "audio"
+tracks/0/path = NodePath("AudioStreamPlayer2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 5 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 9 ), Vector2( 0, -60 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "stampEffect"
+length = 0.6
+tracks/0/type = "audio"
+tracks/0/path = NodePath("AudioStreamPlayer2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 5 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 9 ), Vector2( 0, -60 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[node name="World" type="Node2D"]
+script = ExtResource( 1 )
+music = ExtResource( 6 )
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Player" parent="." instance=ExtResource( 8 )]
+position = Vector2( 217.635, 506.328 )
+scale = Vector2( 4, 4 )
+
+[node name="Stamp2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 673.301, 725.892 )
+
+[node name="AnimationPlayer" parent="Stamp2" index="3"]
+anims/stampEffect = SubResource( 1 )
+
+[node name="Stamp4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1020.45, 503.289 )
+
+[node name="AnimationPlayer" parent="Stamp4" index="3"]
+anims/stampEffect = SubResource( 3 )
+
+[node name="Stamp3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 671.142, 304.991 )
+
+[node name="AnimationPlayer" parent="Stamp3" index="3"]
+anims/stampEffect = SubResource( 2 )
+
+[node name="Scoreboard" type="Label" parent="."]
+margin_right = 424.0
+margin_bottom = 199.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Stamps : 0"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 3.45221
+margin_top = 107.706
+margin_right = 97.4522
+margin_bottom = 174.706
+text = "Go back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Propeller" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+autoplay = true
+
+[node name="Engine" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+autoplay = true
+[connection signal="area_entered" from="Player/Area2D" to="Scoreboard" method="_on_Area2D_area_entered"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+
+[editable path="Player"]
+
+[editable path="Stamp2"]
+
+[editable path="Stamp4"]
+
+[editable path="Stamp3"]

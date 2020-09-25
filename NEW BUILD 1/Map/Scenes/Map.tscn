@@ -1,0 +1,170 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Map/Art/map.png" type="Texture" id=1]
+[ext_resource path="res://Map/Scenes/Waypoint.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Map/Scripts/Map_Controller.gd" type="Script" id=3]
+[ext_resource path="res://Map/Scripts/Map.gd" type="Script" id=4]
+[ext_resource path="res://Map/Art/NYC.png" type="Texture" id=5]
+[ext_resource path="res://Map/Art/CHI.png" type="Texture" id=7]
+[ext_resource path="res://Map/Art/Phila.png" type="Texture" id=8]
+[ext_resource path="res://Map/Art/DC.png" type="Texture" id=9]
+[ext_resource path="res://Music/track_1.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Menu/Scenes/MenuButton.tscn" type="PackedScene" id=11]
+[ext_resource path="res://TravelingTypewriter.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://Map/Scenes/MapScoreBoard.gd" type="Script" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 12 )
+
+[node name="Map" type="Control"]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+music = ExtResource( 10 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="NYC" parent="TextureRect" instance=ExtResource( 2 )]
+
+[node name="Waypoint" parent="TextureRect/NYC" index="0"]
+margin_left = 1569.37
+margin_top = 347.722
+margin_right = 1603.37
+margin_bottom = 378.722
+place_name = "NYC"
+
+[node name="NYC" type="Sprite" parent="TextureRect/NYC"]
+position = Vector2( 1651.74, 361.053 )
+scale = Vector2( 0.537816, 0.495937 )
+texture = ExtResource( 5 )
+
+[node name="CHI" parent="TextureRect" instance=ExtResource( 2 )]
+
+[node name="Waypoint" parent="TextureRect/CHI" index="0"]
+margin_left = 1210.07
+margin_top = 396.867
+margin_right = 1244.07
+margin_bottom = 427.867
+place_name = "CHI"
+
+[node name="CHI" type="Sprite" parent="TextureRect/CHI"]
+position = Vector2( 1292.81, 411.337 )
+scale = Vector2( 0.53946, 0.503036 )
+texture = ExtResource( 7 )
+
+[node name="SF" parent="TextureRect" instance=ExtResource( 2 )]
+
+[node name="Waypoint" parent="TextureRect/SF" index="0"]
+margin_left = 304.601
+margin_top = 421.674
+margin_right = 338.601
+margin_bottom = 452.674
+place_name = "SF"
+
+[node name="Phila" parent="TextureRect" instance=ExtResource( 2 )]
+
+[node name="Waypoint" parent="TextureRect/Phila" index="0"]
+margin_left = 1518.48
+margin_top = 395.301
+margin_right = 1552.48
+margin_bottom = 426.301
+place_name = "Phila"
+
+[node name="Phila" type="Sprite" parent="TextureRect/Phila"]
+position = Vector2( 1614.92, 408.211 )
+scale = Vector2( 0.519425, 0.453933 )
+texture = ExtResource( 8 )
+
+[node name="DC" parent="TextureRect" instance=ExtResource( 2 )]
+
+[node name="Waypoint" parent="TextureRect/DC" index="0"]
+margin_left = 1503.04
+margin_top = 456.631
+margin_right = 1537.04
+margin_bottom = 487.631
+place_name = "DC"
+
+[node name="DC" type="Sprite" parent="TextureRect/DC"]
+position = Vector2( 1569.18, 470.052 )
+scale = Vector2( 0.492117, 0.332472 )
+texture = ExtResource( 9 )
+
+[node name="Map Controller" type="Label" parent="TextureRect"]
+margin_left = 106.76
+margin_top = 891.176
+margin_right = 363.76
+margin_bottom = 973.176
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0627451, 0.0117647, 0, 1 )
+text = "NYC"
+valign = 1
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackToMenu" parent="." instance=ExtResource( 11 )]
+margin_left = 1601.84
+margin_top = 13.5752
+margin_right = 1821.84
+margin_bottom = 72.5752
+
+[node name="Button Name" parent="BackToMenu" index="0"]
+margin_right = 217.0
+margin_bottom = 52.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.0627451, 0.0117647, 0, 1 )
+text = "Back to Menu"
+
+[node name="ScoreBoard" type="Label" parent="."]
+margin_left = 92.6223
+margin_top = 20.6225
+margin_right = 373.622
+margin_bottom = 62.6225
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Stamps Collected: 0"
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="TextureRect/NYC/Waypoint" to="TextureRect/Map Controller" method="_on_Waypoint_NYC_pressed"]
+[connection signal="pressed" from="TextureRect/NYC/Waypoint" to="." method="_on_Waypoint_pressed"]
+[connection signal="pressed" from="TextureRect/CHI/Waypoint" to="TextureRect/Map Controller" method="_on_Waypoint_CHI_pressed"]
+[connection signal="pressed" from="TextureRect/CHI/Waypoint" to="." method="_on_Waypoint_pressed"]
+[connection signal="pressed" from="TextureRect/SF/Waypoint" to="TextureRect/Map Controller" method="_on_Waypoint_SF_pressed"]
+[connection signal="pressed" from="TextureRect/SF/Waypoint" to="." method="_on_Waypoint_pressed"]
+[connection signal="pressed" from="TextureRect/Phila/Waypoint" to="TextureRect/Map Controller" method="_on_Waypoint_Phila_pressed"]
+[connection signal="pressed" from="TextureRect/Phila/Waypoint" to="." method="_on_Waypoint_pressed"]
+[connection signal="pressed" from="TextureRect/DC/Waypoint" to="TextureRect/Map Controller" method="_on_Waypoint_DC_pressed"]
+[connection signal="pressed" from="TextureRect/DC/Waypoint" to="." method="_on_Waypoint_pressed"]
+[connection signal="pressed" from="BackToMenu" to="." method="_on_BackToMenu_pressed"]
+
+[editable path="TextureRect/NYC"]
+
+[editable path="TextureRect/CHI"]
+
+[editable path="TextureRect/SF"]
+
+[editable path="TextureRect/Phila"]
+
+[editable path="TextureRect/DC"]
+
+[editable path="BackToMenu"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Map/Scripts/Waypoint.gd" type="Script" id=1]
+[ext_resource path="res://StyleBoxes/Green_Waypoint_StyleBox.tres" type="StyleBox" id=2]
+[ext_resource path="res://StyleBoxes/Red_Waypoint_StyleBox.tres" type="StyleBox" id=3]
+[ext_resource path="res://StyleBoxes/Empty_Waypoint_StyleBox.tres" type="StyleBox" id=4]
+
+[node name="Waypoint2" type="Node2D"]
+
+[node name="Waypoint" type="Button" parent="."]
+margin_left = 1112.27
+margin_top = 218.178
+margin_right = 1146.27
+margin_bottom = 249.178
+custom_styles/hover = ExtResource( 3 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/disabled = ExtResource( 4 )
+custom_styles/normal = ExtResource( 3 )
+expand_icon = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
